@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue - Todo List</title>
+
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  </head>
+  <body>
+    <div id='root'>
+
+      <input v-model="inputField" @keyup.enter="pushElement(inputField)">
+      <button  @click="pushElement(inputField)"> SUBMIT </button>
+
+
+      <ul>
+        <li v-for="cosa in listaCose"> {{cosa}}</li>
+      </ul>
+
+    </div>
+    <script src="./js/main.js" charset="utf-8"></script>
+  </body>
+</html>
