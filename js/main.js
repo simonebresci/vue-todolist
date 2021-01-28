@@ -8,15 +8,29 @@
 // Vi lascio un esempio di todolist.
 // Buon divertimento branco!
 
+
+// Todo:
+// - non accettare input vuoto
+
+
+
 var app = new Vue ({
   el: '#root',
   data: {
-    listaCose: [],
-    inputField: 'start'
+    listaTodo: ['Fare i compiti', 'Fare la spesa', 'Fare il bucato'],
+    inputAttivita: 'attività da fare'
   },
   methods : {
-    pushElement: function (elemento){
-      this.listaCose.push(elemento);
+    pushElement: function (){
+      if(this.inputAttivita != ''){
+        this.listaTodo.push(this.inputAttivita);
+      }
+    },
+    removeElement: function (index){
+      // Rimuovere elemento con funzione .filter
+      this.listaTodo = this.listaTodo.filter( (element,i) =>{
+        return (i != index);
+      });
     }
   }
 

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Vue - Todo List</title>
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
     <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
@@ -11,13 +14,18 @@
   <body>
     <div id='root'>
 
-      <input v-model="inputField" @keyup.enter="pushElement(inputField)">
-      <button  @click="pushElement(inputField)"> SUBMIT </button>
+      <!-- Inserimento voce elenco -->
+      <input @keyup.enter="pushElement" v-model="inputAttivita">
+      <button @click="pushElement"> Aggiungi</button>
 
-
-      <ul>
-        <li v-for="cosa in listaCose"> {{cosa}}</li>
-      </ul>
+      <!-- Lista todo -->
+      <div class="bg-todolist">
+        <ul class="todolist">
+          <li v-for="(att,indexList) in listaTodo" class="todo-element" >
+            <span >{{att}}</span><i @click="removeElement(indexList)" class="fas fa-times"></i>
+          </li>
+        </ul>
+      </div>
 
     </div>
     <script src="./js/main.js" charset="utf-8"></script>
