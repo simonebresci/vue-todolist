@@ -18,7 +18,7 @@ var app = new Vue ({
   el: '#root',
   data: {
     listaTodo: ['Fare i compiti', 'Fare la spesa', 'Fare il bucato'],
-    inputAttivita: 'attività da fare'
+    inputAttivita: ''
   },
   methods : {
     pushElement: function (){
