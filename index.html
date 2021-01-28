@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Vue - Todo List</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
@@ -15,11 +17,14 @@
     <div id='root'>
 
       <!-- Inserimento voce elenco -->
-      <input @keyup.enter="pushElement" v-model="inputAttivita">
-      <button @click="pushElement"> Aggiungi</button>
+      <div class="box-insert">
+        <input @keyup.enter="pushElement" v-model="inputAttivita">
+        <button @click="pushElement"> Aggiungi</button>
+      </div>
+
 
       <!-- Lista todo -->
-      <div class="bg-todolist">
+      <div class="box-todolist bg-grey">
         <ul class="todolist">
           <li v-for="(att,indexList) in listaTodo" class="todo-element" >
             <span >{{att}}</span><i @click="removeElement(indexList)" class="fas fa-times"></i>
